@@ -1,15 +1,20 @@
-import { Outlet } from "react-router-dom";
+import {Outlet, useLocation} from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer";
+import {Suspense} from "react";
+import {Loading} from "./Loading.jsx";
 
 function Layout() {
+  const location = useLocation()
   return (
     <>
-      <Header />
+      <Header/>
       <main>
-        <Outlet />
+        <Suspense key={location.pathname} fallback={<Loading/>}>
+          <Outlet/>
+        </Suspense>
       </main>
-      <Footer />
+      <Footer/>
     </>
   );
 }
