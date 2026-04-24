@@ -1,16 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { categories } from "../data/data";
+import { categories, type Category } from "../data/data";
 
 function Home() {
-  const location = useLocation();
-  console.log(location);
 
   return (
     <div className="py-10">
       <h1 className="mb-8 text-3xl font-bold text-center">Categories</h1>
       <ul className="grid gap-4 px-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        {categories.map((category) => (
+        {categories.map((category: Category) => (
           <li key={category.id}>
             <Link
               className="relative flex flex-col items-center justify-center w-fit group"

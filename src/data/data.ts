@@ -1,4 +1,17 @@
-export const categories = [
+export type Category = {
+  id: string;
+  name: string;
+  img: string;
+};
+export type Product = {
+  id: number;
+  categoryId: string;
+  name: string;
+  price: number;
+  img: string;
+};
+
+export const categories: Category[] = [
   { id: "Electronics", name: "Electronics", img: "/electronics.png" },
   { id: "Clothing", name: "Clothing", img: "clothing.png" },
   { id: "Books", name: "Books", img: "/books.png" },
@@ -6,7 +19,7 @@ export const categories = [
   { id: "Outdoor", name: "Outdoor", img: "/outdoor.png" },
 ];
 
-export const products = [
+export const products: Product[] = [
   {
     id: 1,
     categoryId: "Electronics",

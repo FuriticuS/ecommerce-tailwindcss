@@ -1,6 +1,13 @@
+import type { To } from "react-router-dom";
+import type { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function NavLinkMenu({ to, children }) {
+type NavLinkMenuProps = {
+  to: To;
+  children: ReactNode;
+};
+
+export default function NavLinkMenu({ to, children }: NavLinkMenuProps) {
   return (
     <NavLink
       className={({ isActive }) =>

@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
-import { products } from "../data/data";
+import { products, type Product } from "../data/data";
 
 function ProductDetails() {
-  const { productId } = useParams();
+  const { productId } = useParams<{ productId: string }>();
 
-  const product = products.find((p) => p.id === parseInt(productId, 10));
+  const product: Product | undefined =
+    productId == null
+      ? undefined
+      : products.find((p: Product) => p.id === parseInt(productId, 10));
 
   return (
     <div className="px-6 py-10">

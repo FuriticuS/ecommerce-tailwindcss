@@ -1,18 +1,19 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { products } from "../data/data";
+import type { ChangeEvent } from "react";
+import { products, type Product } from "../data/data";
 
 function Category() {
-  const { categoryId } = useParams();
+  const { categoryId } = useParams<{ categoryId: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const maxPrice = searchParams.get("maxPrice") ? Number(searchParams.get("maxPrice")) : Infinity;
+  const maxPrice: number = searchParams.get("maxPrice") ? Number(searchParams.get("maxPrice")) : Infinity;
 
-  const currentCategoryArray = products.filter(
-    (product) => product.categoryId === categoryId && product.price <= maxPrice
+  const currentCategoryArray: Product[] = products.filter(
+    (product: Product) => product.categoryId === categoryId && product.price <= maxPrice
   );
 
-  function handleChange(e) {
-    const value = e.target.value;
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    const value: string = e.target.value;
     setSearchParams(value ? { maxPrice: value } : {});
   }
 
@@ -36,8 +37,8 @@ function Category() {
         />
       </div>
       <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-        {currentCategoryArray.map((product) => (
-          <li key={product.name}>
+        {currentCategoryArray.map((product: Product) => (
+          <li key={product.id}>
             <Link
               className="relative flex flex-col items-center justify-center w-fit group"
               to={`/product/${product.id}`}

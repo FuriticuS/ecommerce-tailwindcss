@@ -1,5 +1,7 @@
+import type { FormEvent } from "react";
+
 function Cart() {
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Form submitted!");
   };
