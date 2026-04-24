@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { thanksMessage } from "@/styles/selectors";
 
 export default function Thanks() {
   const navigate = useNavigate();
@@ -12,5 +13,5 @@ export default function Thanks() {
     return () => clearTimeout(timer);
   }, [navigate]);
 
-  return <div>You will be redirected to the home page in 5 seconds...</div>;
+  return <div className={thanksMessage}>You will be redirected to the home page in 5 seconds...</div>;
 }

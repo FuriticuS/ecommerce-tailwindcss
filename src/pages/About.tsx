@@ -1,6 +1,8 @@
+import { aboutPage } from "@/styles/selectors";
+
 export default function About() {
   return (
-    <div className="prose grid xl:grid-cols-1 w-screen">
+    <div className={aboutPage}>
       {/* Заголовки */}
       <h1>About Our E-commerce Platform</h1>
       <h2>Our Vision</h2>

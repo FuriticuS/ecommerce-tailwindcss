@@ -1,13 +1,23 @@
+import type { ChangeEvent } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { products } from "../data/data";
-import ProductCard from "../components/ProductCard.tsx";
-import {ChangeEvent} from "react";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/data";
+import {
+  categoryFilterBlock,
+  categoryFilterLabel,
+  categoryProductGrid,
+  formControl,
+  headingPageCenter,
+  layoutPageSection,
+} from "@/styles/selectors";
 
 export default function Category() {
-  const { categoryId } = useParams();
+  const { categoryId } = useParams<{ categoryId: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const maxPrice = Number(searchParams.get("maxPrice")) || Infinity;
+  const maxPriceRaw = searchParams.get("maxPrice");
+  const maxPrice =
+    maxPriceRaw !== null && maxPriceRaw !== "" ? Number(maxPriceRaw) : Infinity;
 
   const currentCategoryArray = products.filter(
     (product) => product.categoryId === categoryId && product.price <= maxPrice
@@ -23,13 +33,11 @@ export default function Category() {
   };
 
   return (
-    <section className="px-6 py-10">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Category {categoryId}
-      </h1>
+    <section className={layoutPageSection}>
+      <h1 className={headingPageCenter}>Category {categoryId}</h1>
 
-      <div className="mb-4">
-        <label htmlFor="maxPrice" className="text-sm text-gray-500">
+      <div className={categoryFilterBlock}>
+        <label htmlFor="maxPrice" className={categoryFilterLabel}>
           Max Price
         </label>
         <input
@@ -38,11 +46,11 @@ export default function Category() {
           placeholder="Enter max price"
           value={searchParams.get("maxPrice") ?? ""}
           onChange={handlePriceChange}
-          className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className={formControl}
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      <div className={categoryProductGrid}>
         {currentCategoryArray.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

@@ -1,6 +1,8 @@
-import type { To } from "react-router-dom";
 import type { ReactNode } from "react";
+import type { To } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+
+import { navLinkMenuClassName } from "@/styles/selectors";
 
 type NavLinkMenuProps = {
   to: To;
@@ -9,14 +11,7 @@ type NavLinkMenuProps = {
 
 export default function NavLinkMenu({ to, children }: NavLinkMenuProps) {
   return (
-    <NavLink
-      className={({ isActive }) =>
-        `font-miranda text-2xl font-semibold hover:text-black transition duration-300 ease-in-out ${
-          isActive ? "text-red-500" : "text-blue-600"
-        }`
-      }
-      to={to}
-    >
+    <NavLink className={({ isActive }) => navLinkMenuClassName(isActive)} to={to}>
       {children}
     </NavLink>
   );

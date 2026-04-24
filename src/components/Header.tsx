@@ -1,14 +1,16 @@
-import NavLinkMenu from "../ui/NavLinkMenu";
 import { Link } from "react-router-dom";
+
+import { headerLogo, headerNavList, headerRoot } from "@/styles/selectors";
+import NavLinkMenu from "@/ui/NavLinkMenu";
 
 export default function Header() {
   return (
-    <header className="flex flex-row align-baseline justify-between px-10 py-5 bg-blue-200 shadow-md">
+    <header className={headerRoot}>
       <Link to={"/"}>
-        <img className="h-6" src="/logo.svg" alt="logo" />
+        <img className={headerLogo} src="/logo.svg" alt="logo" />
       </Link>
       <nav>
-        <ul className="flex flex-row space-x-2">
+        <ul className={headerNavList}>
           <li>
             <NavLinkMenu to={"/"}>Home</NavLinkMenu>
           </li>

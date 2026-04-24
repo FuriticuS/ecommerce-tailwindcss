@@ -1,3 +1,5 @@
+import { notFoundPage } from "@/styles/selectors";
+
 export default function NotFound() {
-  return <div>Page Not Found</div>;
+  return <div className={notFoundPage}>Page Not Found</div>;
 }

@@ -1,7 +1,8 @@
-import { Outlet, useLocation } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
 import { Suspense } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+
+import Footer from "./Footer";
+import Header from "./Header";
 import { Loading } from "./Loading";
 
 function Layout() {

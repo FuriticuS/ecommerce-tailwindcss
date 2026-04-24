@@ -1,5 +1,23 @@
 import type { FormEvent } from "react";
 
+import {
+  cartFieldLabel,
+  cartFieldLabelPayment,
+  cartFieldStack,
+  cartFieldTextarea,
+  cartForm,
+  cartFormSectionTitle,
+  cartLineItem,
+  cartLineItemList,
+  cartLineItemsHeading,
+  cartPage,
+  cartSectionBlock,
+  cartSubmitButton,
+  cartTitle,
+  cartTotalLine,
+  formControl,
+} from "@/styles/selectors";
+
 function Cart() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -7,39 +25,33 @@ function Cart() {
   };
 
   return (
-    <div className="max-w-md p-5 mx-auto">
-      <h1 className="mb-6 text-2xl font-bold text-center">Shopping Cart</h1>
+    <div className={cartPage}>
+      <h1 className={cartTitle}>Shopping Cart</h1>
 
-      {/* Список товаров */}
-      <div className="mb-8">
-        <h2 className="mb-4 text-lg font-semibold">Your Items:</h2>
-        <ul className="space-y-2">
-          <li className="flex items-center justify-between pb-2 border-b">
+      <div className={cartSectionBlock}>
+        <h2 className={cartLineItemsHeading}>Your Items:</h2>
+        <ul className={cartLineItemList}>
+          <li className={cartLineItem}>
             <span>Product 1</span>
             <span>$25</span>
           </li>
-          <li className="flex items-center justify-between pb-2 border-b">
+          <li className={cartLineItem}>
             <span>Product 2</span>
             <span>$45</span>
           </li>
         </ul>
-        <p className="mt-4 font-medium text-md">Total: $70</p>
+        <p className={cartTotalLine}>Total: $70</p>
       </div>
 
-      {/* Форма */}
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <h2 className="h-2 text-lg font-semibold">Enter Your Details:</h2>
+      <form onSubmit={handleSubmit} className={cartForm}>
+        <h2 className={cartFormSectionTitle}>Enter Your Details:</h2>
 
-        {/* Поле Name */}
-        <div className="flex flex-col">
-          <label
-            className="text-sm text-gray-500 peer-placeholder-shown:text-gray-400 peer-focus:text-blue-500"
-            htmlFor="name"
-          >
+        <div className={cartFieldStack}>
+          <label className={cartFieldLabel} htmlFor="name">
             Name
           </label>
           <input
-            className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={formControl}
             id="name"
             type="text"
             placeholder="Enter your full name"
@@ -47,16 +59,12 @@ function Cart() {
           />
         </div>
 
-        {/* Поле Email */}
-        <div className="flex flex-col">
-          <label
-            className="text-sm text-gray-500 peer-placeholder-shown:text-gray-400 peer-focus:text-blue-500"
-            htmlFor="email"
-          >
+        <div className={cartFieldStack}>
+          <label className={cartFieldLabel} htmlFor="email">
             Email
           </label>
           <input
-            className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={formControl}
             id="email"
             type="email"
             placeholder="Enter your email address"
@@ -64,12 +72,8 @@ function Cart() {
           />
         </div>
 
-        {/* Поле Address */}
-        <div className="flex flex-col">
-          <label
-            className="text-sm text-gray-500 peer-placeholder-shown:text-gray-400 peer-focus:text-blue-500"
-            htmlFor="address"
-          >
+        <div className={cartFieldStack}>
+          <label className={cartFieldLabel} htmlFor="address">
             Address
           </label>
           <textarea
@@ -77,53 +81,31 @@ function Cart() {
             placeholder="Enter your delivery address"
             rows={3}
             required
-            className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-          ></textarea>
+            className={cartFieldTextarea}
+          />
         </div>
 
-        {/* Поле Payment */}
-        <div className="flex flex-col">
-          <label className="text-sm text-gray-500 peer-focus:text-blue-500" htmlFor="payment">
+        <div className={cartFieldStack}>
+          <label className={cartFieldLabelPayment} htmlFor="payment">
             Payment Method
           </label>
-          <select
-            className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="payment"
-            required
-          >
-            <option
-              className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value=""
-              disabled
-            >
+          <select className={formControl} id="payment" required>
+            <option className={formControl} value="" disabled>
               Select payment method
             </option>
-            <option
-              className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value="creditCard"
-            >
+            <option className={formControl} value="creditCard">
               Credit Card
             </option>
-            <option
-              className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value="paypal"
-            >
+            <option className={formControl} value="paypal">
               PayPal
             </option>
-            <option
-              className="peer p-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value="cash"
-            >
+            <option className={formControl} value="cash">
               Cash on Delivery
             </option>
           </select>
         </div>
 
-        {/* Кнопка Submit */}
-        <button
-          className="w-full px-4 py-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600 cursor-pointer"
-          type="submit"
-        >
+        <button className={cartSubmitButton} type="submit">
           Place Order
         </button>
       </form>
