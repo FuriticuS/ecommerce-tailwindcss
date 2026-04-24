@@ -1,9 +1,8 @@
-import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import { lazy } from "react";
 import Layout from "@/components/Layout";
 import NotFound from "@/pages/NotFound";
 import Thanks from "@/pages/Thanks";
-import { appRouterFallback } from "@/styles/selectors";
 
 // Lazyload
 const Home = lazy(() => import("@/pages/Home"));
@@ -30,9 +29,5 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return (
-    <Suspense fallback={<div className={appRouterFallback}>Загрузка...</div>}>
-      <RouterProvider router={router} />
-    </Suspense>
-  );
+  return <RouterProvider router={router} />;
 }

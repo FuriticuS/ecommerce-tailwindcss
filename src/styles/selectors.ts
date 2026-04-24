@@ -1,8 +1,5 @@
 import classNames from "classnames";
 
-// App
-export const appRouterFallback = "text-center p-10";
-
 // Home
 export const homePageRoot = "py-10";
 export const homePageTitle = "mb-8 text-3xl font-bold text-center";

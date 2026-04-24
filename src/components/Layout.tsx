@@ -1,9 +1,8 @@
 import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-
+import { Loading } from "./Loading";
 import Footer from "./Footer";
 import Header from "./Header";
-import { Loading } from "./Loading";
 
 function Layout() {
   const location = useLocation();
