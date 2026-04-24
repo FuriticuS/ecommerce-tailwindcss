@@ -1,8 +1,8 @@
-import {Link, useParams, useSearchParams} from "react-router-dom";
-import {products} from "../data/data";
+import { Link, useParams, useSearchParams } from "react-router-dom";
+import { products } from "../data/data";
 
 function Category() {
-  const {categoryId} = useParams();
+  const { categoryId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const maxPrice = searchParams.get("maxPrice") ? Number(searchParams.get("maxPrice")) : Infinity;
@@ -13,15 +13,19 @@ function Category() {
 
   function handleChange(e) {
     const value = e.target.value;
-    setSearchParams(value ? {maxPrice: value} : {});
+    setSearchParams(value ? { maxPrice: value } : {});
   }
 
   return (
     <div className="px-6 py-10">
       <h1 className="text-3xl font-bold text-center mb-6">Category {categoryId}</h1>
       <div className="mb-4">
-        <label className="text-sm text-gray-500 peer-placeholder-shown:text-gray-400 peer-focus:text-blue-500"
-               htmlFor="maxPrice">Max Price </label>
+        <label
+          className="text-sm text-gray-500 peer-placeholder-shown:text-gray-400 peer-focus:text-blue-500"
+          htmlFor="maxPrice"
+        >
+          Max Price{" "}
+        </label>
         <input
           type="number"
           id="maxPrice"
@@ -34,13 +38,17 @@ function Category() {
       <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {currentCategoryArray.map((product) => (
           <li key={product.name}>
-            <Link className="relative flex flex-col items-center justify-center w-fit group"
-                  to={`/product/${product.id}`}>
-              <span
-                className="absolute font-semibold text-white text-center text-xl z-10 group-hover:text-red-500 group-hover:animate-wiggle transition duration-1300">{product.name}<br/>{product.price}$</span>
-              <img className="rounded-md w-5xl" src={product.img} alt={product.name}/>
-              <div
-                className="absolute bg-linear-to-b from-avocado-600 via-black to-avocado-500 inset-0 opacity-20 rounded-md"></div>
+            <Link
+              className="relative flex flex-col items-center justify-center w-fit group"
+              to={`/product/${product.id}`}
+            >
+              <span className="absolute font-semibold text-white text-center text-xl z-10 group-hover:text-red-500 group-hover:animate-wiggle transition duration-1300">
+                {product.name}
+                <br />
+                {product.price}$
+              </span>
+              <img className="rounded-md w-5xl" src={product.img} alt={product.name} />
+              <div className="absolute bg-linear-to-b from-avocado-600 via-black to-avocado-500 inset-0 opacity-20 rounded-md"></div>
             </Link>
           </li>
         ))}

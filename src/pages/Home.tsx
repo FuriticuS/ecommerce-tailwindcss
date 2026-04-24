@@ -12,8 +12,13 @@ function Home() {
       <ul className="grid gap-4 px-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {categories.map((category) => (
           <li key={category.id}>
-            <Link className="relative flex flex-col items-center justify-center w-fit group" to={`/category/${category.name}`}>
-              <span className="absolute font-semibold text-white text-xl z-10 group-hover:text-red-500 group-hover:animate-wiggle transition duration-1300">{category.name}</span>
+            <Link
+              className="relative flex flex-col items-center justify-center w-fit group"
+              to={`/category/${category.name}`}
+            >
+              <span className="absolute font-semibold text-white text-xl z-10 group-hover:text-red-500 group-hover:animate-wiggle transition duration-1300">
+                {category.name}
+              </span>
               <img className="rounded-md w-5xl" src={category.img} alt={category.name} />
               <div className="absolute bg-linear-to-b from-avocado-600 via-black to-avocado-500 inset-0 opacity-20 rounded-md"></div>
             </Link>

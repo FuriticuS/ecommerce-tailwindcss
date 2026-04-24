@@ -3,7 +3,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import Thanks from "./pages/Thanks";
-import {lazy} from "react";
+import { lazy } from "react";
 
 // Lazyload
 const Home = lazy(() => import("./pages/Home"));
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Home/>},
+      { index: true, element: <Home /> },
       { path: "old-home", element: <Navigate to={"/"} /> },
       { path: "about", element: <About /> },
       { path: "cart", element: <Cart /> },
@@ -30,9 +30,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-
-function App() {
+export default function App() {
   return <RouterProvider router={router} />;
 }
-
-export default App;

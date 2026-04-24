@@ -17,8 +17,8 @@ function About() {
       </p>
       <p>
         Our mission is to connect customers with products they love, from trusted sellers around the
-        world. Whether you're looking for the latest gadgets, fashion, or home essentials, we've got
-        you covered.
+        world. Whether you&apos;re looking for the latest gadgets, fashion, or home essentials,
+        we&apos;ve got you covered.
       </p>
 
       {/* Списки */}
@@ -39,7 +39,8 @@ function About() {
 
       {/* Блок цитат */}
       <blockquote>
-        "E-commerce is not the cherry on the cake, it's the new cake." — Jean-Paul Ago
+        &ldquo;E-commerce is not the cherry on the cake, it&apos;s the new cake.&rdquo; — Jean-Paul
+        Ago
       </blockquote>
 
       {/* Кодовые блоки */}

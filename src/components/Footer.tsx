@@ -11,16 +11,24 @@ function Footer() {
           </h3>
           <ul>
             <li>
-              <Link className="hover:text-red-500" to="#">FAQs</Link>
+              <Link className="hover:text-red-500" to="#">
+                FAQs
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-red-500" to="#">Shipping & Returns</Link>
+              <Link className="hover:text-red-500" to="#">
+                Shipping & Returns
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-red-500" to="#">Order Tracking</Link>
+              <Link className="hover:text-red-500" to="#">
+                Order Tracking
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-red-500" to="#">Contact Us</Link>
+              <Link className="hover:text-red-500" to="#">
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
@@ -30,16 +38,24 @@ function Footer() {
           <h3 className="text-black font-bold mb-3">Follow Us</h3>
           <ul>
             <li>
-              <Link className="hover:text-red-500" to="#">Facebook</Link>
+              <Link className="hover:text-red-500" to="#">
+                Facebook
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-red-500" to="#">Instagram</Link>
+              <Link className="hover:text-red-500" to="#">
+                Instagram
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-red-500" to="#">Twitter</Link>
+              <Link className="hover:text-red-500" to="#">
+                Twitter
+              </Link>
             </li>
             <li>
-              <Link className="hover:text-red-500" to="#">LinkedIn</Link>
+              <Link className="hover:text-red-500" to="#">
+                LinkedIn
+              </Link>
             </li>
           </ul>
         </div>
