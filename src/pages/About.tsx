@@ -1,4 +1,4 @@
-function About() {
+export default function About() {
   return (
     <div className="prose grid xl:grid-cols-1 w-screen">
       {/* Заголовки */}
@@ -72,5 +72,3 @@ function About() {
     </div>
   );
 }
-
-export default About;

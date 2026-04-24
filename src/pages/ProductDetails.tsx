@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { products, type Product } from "../data/data";
 
-function ProductDetails() {
+export default function ProductDetails() {
   const { productId } = useParams<{ productId: string }>();
 
   const product: Product | undefined =
@@ -26,5 +26,3 @@ function ProductDetails() {
     </div>
   );
 }
-
-export default ProductDetails;

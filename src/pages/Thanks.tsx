@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Thanks() {
+export default function Thanks() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,5 +14,3 @@ function Thanks() {
 
   return <div>You will be redirected to the home page in 5 seconds...</div>;
 }
-
-export default Thanks;
