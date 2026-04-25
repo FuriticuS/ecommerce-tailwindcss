@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 import { Loading } from "./Loading";
-import Footer from "./Footer";
-import Header from "./Header";
 
-function Layout() {
+export function Layout() {
   const location = useLocation();
   return (
     <>
@@ -18,5 +18,3 @@ function Layout() {
     </>
   );
 }
-
-export default Layout;

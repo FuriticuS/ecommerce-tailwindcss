@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { thanksMessage } from "@/styles/selectors";
 
-export default function Thanks() {
+export function Thanks() {
   const navigate = useNavigate();
 
   useEffect(() => {

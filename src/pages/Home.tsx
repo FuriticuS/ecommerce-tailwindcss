@@ -11,7 +11,7 @@ import {
   homePageTitle,
 } from "@/styles/selectors";
 
-function Home() {
+export function Home() {
   return (
     <div className={homePageRoot}>
       <h1 className={homePageTitle}>Categories</h1>
@@ -29,5 +29,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

@@ -8,7 +8,7 @@ import {
   footerRoot,
 } from "@/styles/selectors";
 
-function Footer() {
+export function Footer() {
   return (
     <footer className={footerRoot}>
       <div className={footerColumns}>
@@ -80,5 +80,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

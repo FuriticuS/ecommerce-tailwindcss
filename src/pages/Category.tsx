@@ -1,6 +1,6 @@
 import type { ChangeEvent } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import ProductCard from "@/components/ProductCard";
+import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/data";
 import {
   categoryFilterBlock,
@@ -11,7 +11,7 @@ import {
   layoutPageSection,
 } from "@/styles/selectors";
 
-export default function Category() {
+export function Category() {
   const { categoryId } = useParams<{ categoryId: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
 

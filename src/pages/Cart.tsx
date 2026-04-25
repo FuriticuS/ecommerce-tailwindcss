@@ -18,7 +18,7 @@ import {
   formControl,
 } from "@/styles/selectors";
 
-function Cart() {
+export function Cart() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Form submitted!");
@@ -112,5 +112,3 @@ function Cart() {
     </div>
   );
 }
-
-export default Cart;

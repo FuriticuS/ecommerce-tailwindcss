@@ -10,7 +10,7 @@ import {
   productDetailPrice,
 } from "@/styles/selectors";
 
-export default function ProductDetails() {
+export function ProductDetails() {
   const { productId } = useParams<{ productId: string }>();
 
   const product: Product | undefined =

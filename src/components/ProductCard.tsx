@@ -11,7 +11,7 @@ type ProductCardProps = {
   product: Product;
 };
 
-export default function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link className={gridCardLink} to={`/product/${product.id}`}>
       <span className={gridCardCaption}>
